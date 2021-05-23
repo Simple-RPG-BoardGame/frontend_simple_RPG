@@ -356,52 +356,20 @@ export default {
             // "UP" will equal the player position.col - 1
             // so, this.player.position.row - 1 === UP
 
-            let startingPlace = null
-            let endingPlace = null
-
-            // LOOP TO FIND STARTING PLACE
-            for (let k = 0; k < this.gameBoard3x3.length; k++) {
-                let posRowTile = this.gameBoard3x3[k].position.row
-                let posColTile = this.gameBoard3x3[k].position.col
-
-                let posRowPc = this.player.position.row
-                let posColPc = this.player.position.col
-                if (posRowTile == posRowPc && posColTile == posColPc) {
-                    console.log('STARTING TILE POSITION IS', k)
-                    startingPlace = k
-                }
-            }
-            console.log(startingPlace, 'starting place? should be 6')
-
-            // LOOP TO FIND ENDING PLACE
             for (let i = 0; i < this.gameBoard3x3.length; i++) {
-                let posRowTile = this.gameBoard3x3[i].position.row
-                let posColTile = this.gameBoard3x3[i].position.col
-
-                let posRowPc = this.player.position.row
-                let posColPc = this.player.position.col
-                if (posRowTile == posRowPc - 1 && posColTile == posColPc) {
-                    console.log('ENDING TILE POSITION IS', i)
-                    endingPlace = i
+                if (
+                    this.gameBoard3x3[i].position.row ==
+                        this.player.position.row - 1 &&
+                    this.gameBoard3x3[i].position.col ==
+                        this.player.position.col
+                ) {
+                    this.gameBoard3x3[i].console.log('fuck off')
+                    console.log('equal to at index position', i)
+                    // position found, tile #6 which is column 1 and row 3, aka bottom left, so to move "up" would be to tile 3 but this cannot be hard coded
+                    // so how the fuck do i do this?
+                    // maybe subtract 1 from the row, then look for a which tile has that fucking shit
                 }
             }
-            console.log(endingPlace, 'ending place? should be 3')
-
-            // EDITS TO STARTING LOCATION
-            this.gameBoard3x3[startingPlace].residentPlayer = false
-
-            // EDITS TO ENDING LOCATION
-            // tile edits
-            this.gameBoard3x3[endingPlace].residentNpc = false
-            this.gameBoard3x3[endingPlace].npcType = null
-            this.gameBoard3x3[endingPlace].residentPlayer = true
-            // player edits
-            this.player.position.row = this.gameBoard3x3[
-                endingPlace
-            ].position.row
-            this.player.position.col = this.gameBoard3x3[
-                endingPlace
-            ].position.col
         },
         moveLeft() {},
         moveRight() {},
