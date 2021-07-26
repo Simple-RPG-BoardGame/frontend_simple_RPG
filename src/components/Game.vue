@@ -617,7 +617,7 @@ export default {
                 .get('https://backend-rpg-game.herokuapp.com/api/users/champs')
                 .then(res => {
                     this.topScores = res.data
-                    console.log(res.data, 'this should be the list of current users on the database')
+                    // console.log(res.data, 'this should be the list of current users on the database')
                 })
                 .catch(err => {
                     console.log(err, 'error')
@@ -979,10 +979,10 @@ export default {
                         npcNumberRemaining -= 1
                     }
                 }
-                console.log(npcNumberRemaining, 'remaining NPCs')
+                // console.log(npcNumberRemaining, 'remaining NPCs')
                 if (npcNumberRemaining <= 0) {
                     this.playerVictory = true
-                    console.log('VICTORY')
+                    // console.log('VICTORY')
                 }
             }
         },
@@ -996,7 +996,7 @@ export default {
                         score: this.score,
                     })
                     .then(res => {
-                        console.log(res.data)
+                        // console.log(res.data)
                         res.status(201).json({ message: 'user info posted successfully' })
                     })
                     .catch(err => {
