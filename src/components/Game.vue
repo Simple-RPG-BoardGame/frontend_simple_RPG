@@ -614,7 +614,7 @@ export default {
         },
         getTopScores() {
             axios
-                .get('http://localhost:6060/api/users/champs')
+                .get('https://backend-rpg-game.herokuapp.com/api/users/champs')
                 .then(res => {
                     this.topScores = res.data
                     console.log(res.data, 'this should be the list of current users on the database')
@@ -991,7 +991,7 @@ export default {
                 alert('Please fill in 3 letters your user name')
             } else if (this.playerVictory === true) {
                 axios
-                    .post('http://localhost:6060/api/users/post', {
+                    .post('https://backend-rpg-game.herokuapp.com/api/users/post', {
                         username: this.title,
                         score: this.score,
                     })
