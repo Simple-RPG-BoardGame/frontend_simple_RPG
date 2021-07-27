@@ -616,8 +616,13 @@ export default {
             axios
                 .get('https://backend-rpg-game.herokuapp.com/api/users/champs')
                 .then(res => {
-                    this.topScores = res.data
-                    // console.log(res.data, 'this should be the list of current users on the database')
+                    if(res){
+                        this.topScores = res.data
+                        // console.log(res.data, 'this should be the list of current users on the database')
+                    } else {
+                        console.log("wtf is going on")
+                    }
+
                 })
                 .catch(err => {
                     console.log(err, 'error')
