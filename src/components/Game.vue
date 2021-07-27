@@ -131,7 +131,7 @@
                 <v-row v-if="showBtn && !gameOver" style="width: 600px; margin-left:7%;">
                     <v-col cols="12" :elevation="50">
                         <button
-                            id="control_Btn"
+                            class="control_Btn"
                             @click="moveUp()"
                             style="
             border: 2px ridge silver;
@@ -148,17 +148,17 @@
                 <!-- BOTTOM ROW OF GAME BUTTONS -->
                 <v-row v-if="showBtn && !gameOver" style="width: 600px; margin-left:7%;">
                     <v-col cols="4">
-                        <button id="control_Btn" @click="moveLeft()" style="border:2px ridge silver;width:130px;height:40px;margin-left:55px;background-color:tan;">
+                        <button class="control_Btn" @click="moveLeft()" style="border:2px ridge silver;width:130px;height:40px;margin-left:55px;background-color:tan;">
                             Left
                         </button>
                     </v-col>
                     <v-col cols="4">
-                        <button id="control_Btn" @click="moveDown()" style="border:2px ridge silver;width:130px;height:40px;background-color:tan;">
+                        <button class="control_Btn" @click="moveDown()" style="border:2px ridge silver;width:130px;height:40px;background-color:tan;">
                             Down
                         </button>
                     </v-col>
                     <v-col cols="4">
-                        <button id="control_Btn" @click="moveRight()" style="border:2px ridge silver;width:130px;height:40px;margin-left:-55px;background-color:tan;">
+                        <button class="control_Btn" @click="moveRight()" style="border:2px ridge silver;width:130px;height:40px;margin-left:-55px;background-color:tan;">
                             Right
                         </button>
                     </v-col>
@@ -208,7 +208,7 @@
                         </p>
                         <p v-if="this.gameBoard3x3[this.player.boardIndex].npcType">
                             Enemy Health :
-                            <progress id="npcHealth" value="100" max="100" style="background-color:green;"></progress>
+                            <progress class="npcHealth" value="100" max="100" style="background-color:green;"></progress>
                         </p>
                         <p>
                             Enemy Attack Power :
@@ -226,7 +226,7 @@
                         <p>Player Health : {{ this.player.hp }}</p>
                         <p>
                             Player Health :
-                            <progress id="playerHealth" value="100" max="100" style="background-color:green"></progress>
+                            <progress class="playerHealth" value="100" max="100" style="background-color:green"></progress>
                         </p>
                         <p>Player Attack Power : {{ this.player.ap }}</p>
                         <p>Player Armor Rating : {{ this.player.ar }}</p>
@@ -620,7 +620,7 @@ export default {
                         this.topScores = res.data
                         // console.log(res.data, 'this should be the list of current users on the database')
                     } else {
-                        console.log("wtf is going on")
+                        // console.log("hey")
                     }
 
                 })
@@ -1243,7 +1243,7 @@ export default {
 </script>
 
 <style scoped>
-#control_Btn {
+.control_Btn {
     box-shadow: 3px 3px 5px;
 }
 
